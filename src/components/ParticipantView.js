@@ -216,7 +216,7 @@ export const CornerDisplayName = ({
     return () => {
       if (statsIntervalIdRef.current) clearInterval(statsIntervalIdRef.current);
     };
-  }, [webcamStream, micStream, screenShareStream]);
+  }, [webcamStream, micStream, screenShareStream, updateStats]);
 
   return (
     <>

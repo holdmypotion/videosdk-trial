@@ -4,7 +4,6 @@ import {
   useState,
   useEffect,
   useRef,
-  useMemo,
 } from "react";
 
 export const MeetingAppContext = createContext();
@@ -39,7 +38,7 @@ export const MeetingAppProvider = ({ children }) => {
 
     useEffect(() => {
       raisedHandsParticipantsRef.current = raisedHandsParticipants;
-    }, [raisedHandsParticipants]);
+    }, []);
 
     const _handleRemoveOld = () => {
       const raisedHandsParticipants = [...raisedHandsParticipantsRef.current];

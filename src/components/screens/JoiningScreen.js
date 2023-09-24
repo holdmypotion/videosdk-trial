@@ -250,7 +250,7 @@ export function JoiningScreen({
       _handleTurnOffMic();
       _handleTurnOffWebcam();
     }
-  }, [meetingMode]);
+  }, [_handleTurnOffMic, _handleTurnOffWebcam, meetingMode]);
 
   useEffect(() => {
     videoTrackRef.current = videoTrack;
@@ -281,7 +281,7 @@ export function JoiningScreen({
 
   useEffect(() => {
     getDevices({ micEnabled, webcamEnabled });
-  }, []);
+  }, [getDevices, micEnabled, webcamEnabled]);
 
   const ButtonWithTooltip = ({ onClick, onState, OnIcon, OffIcon, mic }) => {
     const [tooltipShow, setTooltipShow] = useState(false);
